@@ -25,7 +25,7 @@ SECRET_KEY = '4s96!6*@f3xfno(^$nycb9wl)jujr^sssp4!$p)m(kz!2e&%pv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost:3000']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
 
 CORS_ORIGIN_WHITELIST = ('http://127.0.0.1:3000',)
 
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -139,3 +140,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))

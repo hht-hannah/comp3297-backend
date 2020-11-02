@@ -11,6 +11,9 @@ pyproj = "*"
 django-rest-framework = "*"
 django-cors-headers = "*"
 requests = "*"
+gunicorn = "*"
+waitress = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
